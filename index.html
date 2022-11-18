@@ -3,18 +3,55 @@
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=0.7">
   <title>Document</title>
   <script type="module" src="https://gradio.s3-us-west-2.amazonaws.com/3.9.1/gradio.js"></script>
 </head>
 <style>
   body {
     width: 500px;
+    max-width: 95%;
     display: block;
-    margin: 150px auto;
+    margin: 75px auto;
+  }
+  h1 {
+    font-weight: 100;
+  }
+  a {
+    display: block;
+    text-decoration: none;
+  }
+  a:hover {
+    text-decoration: underline;
+  }
+  .links{
+    margin-bottom: 50px;
   }
 </style>
 <body>
+  <div>
+    <h1>Welcome to my Stable Diffusion GitHub Page Demo!</h1>
+    <p>
+      This page is a demonstration of how to build and host a stable diffusion project that can run generative models in real time via a github page. 
+    </p>
+    <p>
+      This was developed in google colab using a stable diffusion model from huggingface and the user interface library gradio. After being tested and styled it was uploaded to a huggingface space running a GPU for $0.6 / hour and then embedded as a dynamic html element on this static github page. 
+    </p>
+    <p>
+      Gradio is an amazing tool for quickly making user interfaces from python notebooks but it's fairly difficult to override it's default styling so this also demonstrates some basic css resetting.
+    </p>
+    <p>
+      The actual demo is a very basic use of stable diffusion to produce children's drawings from user input. It's kind of intended for my 2yo to play around with. It costs a little money to run this GPU so don't go too nuts! 🙏✨
+    </p>
+  </div>
+
+  <div class="links">
+    <a target="new" href="https://colab.research.google.com/drive/1riRk7JcIAgrX7k9AnNW6RACixTsMD3kZ?usp=sharing">colab notebook</a>
+    <a target="new" href="https://huggingface.co/spaces/tombetthauser/kids-drawings">huggingface space</a>
+    <a target="new" href="https://github.com/tombetthauser/kids-drawings/blob/main/index.html">github repo</a>
+    <a target="new" href="https://gradio.app/getting_started/">gradio</a>
+  </div>
+  
   <gradio-app space="tombetthauser/kids-drawings"></gradio-app>
 </body>
 </html>
